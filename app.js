@@ -1,15 +1,48 @@
-const express=require("express");
-const app=express();
+// const express=require("express");
+// const app=express();
 
-const server = require('http').createServer();
+// const server = require('http').createServer(app);
+// const io = require('socket.io')(server);
+// io.on('connection', client => {
+//   client.on('event', data => { /* … */ });
+//   client.on('disconnect', () => { /* … */ });
+// });
+// app.get("/",function(req,res){
+//   res.send("heloow");
+// })
+// server.listen(3000,function(){
+//     console.log("server is worikng");
+// });
+
+
+
+// chating appp
+
+
+const express = require("express");
+const app = express();
+app.set('view engine', "ejs");
+const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-io.on('connection', client => {
-  client.on('event', data => { /* … */ });
-  client.on('disconnect', () => { /* … */ });
+io.on('connection', socket => {
+  // console.log("connect");
+
+  // secont step
+  // server p mssage recieve krna on meansn resieve
+  socket.on("message", msg => {
+
+    console.log(msg);
+    
+    // third steps
+    // masg ko send sever s 
+    io.emit("maasge", msg);
+  });
+  // socket.on('disconnect', () => { /* … */ });
 });
-server.listen(3000,function(){
-    console.log("connect");
+
+app.get("/", function (req, res) {
+  res.render("index");
 });
-app.get("/",function(req,res){
-    res.send("heloow");
-})
+server.listen(3000, function () {
+  console.log("server is worikng");
+});
