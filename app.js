@@ -25,17 +25,19 @@ app.set('view engine', "ejs");
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
-  // console.log("connect");
+  console.log("connect");
 
   // secont step
   // server p mssage recieve krna on meansn resieve
   socket.on("message", msg => {
-
     console.log(msg);
     
     // third steps
     // masg ko send sever s 
-    io.emit("maasge", msg);
+    // io.emit("maasge", msg);   //is line s sabko msg send ho rha tha but jo 
+    // msg send krta h usko msg n dikhna h issliye broadcast use krte h
+
+    socket.broadcast.emit("maasge", msg);
   });
   // socket.on('disconnect', () => { /* … */ });
 });
