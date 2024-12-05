@@ -4,31 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>socketIo</title>
 </head>
+
 <body>
-<input type="text" placeholder="typing the masaage">
-<button>send</button>
+    <input type="text" placeholder="typing the masaage">
+    <button>send msassage</button>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      const socket = io();
-document.querySelector("button").addEventListener("click",function(){
-const msg=document.querySelector("input").value
-// console.log(msg)
- 
-// firststep
-// emit means send the massage in client side
-socket.emit("message",msg);
-});
+        const socket = io();
+        document.querySelector("button").addEventListener("click", function () {
+            const msg = document.querySelector("input").value
+            // console.log(msg)
 
-// foruth step
-// msaage recive krna in browswer or client side
-socket.on("maasge",(msg)=>{
-   console.log(msg) 
+            // firststep
+            // emit means send the massage in client side
+            socket.emit("message", msg);
+        });
 
-})
+        // foruth step
+        // msaage recive krna in browswer or client side
+        socket.on("maasge", (msg) => {
+            console.log(msg)
 
+        })
 
     </script>
 </body>
