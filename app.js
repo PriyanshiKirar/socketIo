@@ -26,7 +26,7 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
   console.log("connect to  socketio");
-
+console.log(socket.id)
   // secont step
   // server p mssage recieve krna on meansn resieve
   socket.on("message", msg => {
