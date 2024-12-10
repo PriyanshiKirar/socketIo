@@ -25,7 +25,7 @@ app.set('view engine', "ejs");
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
-  console.log("connect to sockete io is to");
+  console.log("connect to sockete io is to ghhjk");
 console.log(socket.id)
   // secont step
   // server p mssage recieve krna on meansn resieve
