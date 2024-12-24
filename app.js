@@ -26,7 +26,7 @@ const db=require("./config/db")
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
-  console.log("connect to sockete io is to ghhjk");
+  console.log("connect to  socket Io");
 console.log(socket.id)
   // secont step
   // server p mssage recieve krna on meansn resieve
