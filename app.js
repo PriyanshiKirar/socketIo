@@ -21,13 +21,15 @@
 
 const express = require("express");
 const app = express();
+const cookeiParser=require("cookie-parser");
 app.set('view engine', "ejs");
 const db=require("./config/db")
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
   console.log("connect to  socket io in...of");
-console.log(socket.id)
+console.log(socket.id);
+app.use(cookeiParser());
   // secont step
   // server p mssage recieve krna on meansn resieve
   socket.on("message", msg => {
