@@ -18,7 +18,7 @@
 
 // chating appp
 
-
+require('dotenv');
 const express = require("express");
 const app = express();
 const cookeiParser=require("cookie-parser");
