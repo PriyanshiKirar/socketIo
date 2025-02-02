@@ -4,3 +4,4 @@ const userSchema=mongoose.Schema({
     user:String,
     email:String,
 })
+module.exports=mongoose.model("user",userSchema)
