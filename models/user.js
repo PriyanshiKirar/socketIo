@@ -1,9 +1,9 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://0.0.0.0/socket');
-const userSchema=mongoose.Schema({
-    user:String,
-mobileNumber:Number,
-    email:String,
-    password:String,
+const userSchema = mongoose.Schema({
+    user: String,
+    mobileNumber: Number,
+    email: String,
+    password: String,
 })
-module.exports=mongoose.model("user",userSchema)
+module.exports = mongoose.model("user", userSchema)
