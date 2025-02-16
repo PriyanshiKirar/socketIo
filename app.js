@@ -49,5 +49,5 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 server.listen(3000, function () {
-  console.log("server is worikng");
+  console.log("server is worikng on 3000");
 });
